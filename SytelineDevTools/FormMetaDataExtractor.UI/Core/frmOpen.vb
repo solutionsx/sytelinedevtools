@@ -89,7 +89,7 @@ Public Class FormItem
                 End Try
             End If
         Next
-        Return lFormItems.OrderBy(Function(i) i.Description)
+        Return lFormItems.OrderBy(Function(i) i.Description).ToList
     End Function
 
     Public Shared Sub OpenItem(InItem As FormItem)

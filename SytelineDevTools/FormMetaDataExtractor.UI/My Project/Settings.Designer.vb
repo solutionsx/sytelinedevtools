@@ -113,6 +113,54 @@ Namespace My
                 Me("OutputPath") = value
             End Set
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+        Public Property DBServer() As String
+            Get
+                Return CType(Me("DBServer"),String)
+            End Get
+            Set
+                Me("DBServer") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+        Public Property DBAppName() As String
+            Get
+                Return CType(Me("DBAppName"),String)
+            End Get
+            Set
+                Me("DBAppName") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+        Public Property DBUser() As String
+            Get
+                Return CType(Me("DBUser"),String)
+            End Get
+            Set
+                Me("DBUser") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+        Public Property DBPassword() As String
+            Get
+                Return CType(Me("DBPassword"),String)
+            End Get
+            Set
+                Me("DBPassword") = value
+            End Set
+        End Property
     End Class
 End Namespace
 
