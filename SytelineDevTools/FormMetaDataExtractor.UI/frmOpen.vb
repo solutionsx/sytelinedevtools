@@ -51,7 +51,7 @@
                 End Try
             End If
         Next
-        Return lFormItems
+        Return lFormItems.OrderBy(Function(i) i.Description)
     End Function
 
 
