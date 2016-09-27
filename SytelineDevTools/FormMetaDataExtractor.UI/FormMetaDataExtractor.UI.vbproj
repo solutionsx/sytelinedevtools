@@ -97,19 +97,19 @@
       <DependentUpon>Form1.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmMain.Designer.vb">
+    <Compile Include="Core\frmMain.Designer.vb">
       <DependentUpon>frmMain.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmMain.vb">
+    <Compile Include="Core\frmMain.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmOpen.Designer.vb">
+    <Compile Include="Core\frmOpen.Designer.vb">
       <DependentUpon>frmOpen.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmOpen.vb">
+    <Compile Include="Core\frmOpen.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormMenuItem.vb" />
+    <Compile Include="Core\FormMenuItem.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -130,10 +130,10 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmMain.resx">
+    <EmbeddedResource Include="Core\frmMain.resx">
       <DependentUpon>frmMain.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmOpen.resx">
+    <EmbeddedResource Include="Core\frmOpen.resx">
       <DependentUpon>frmOpen.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
@@ -162,7 +162,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="SyteLineDevTools.ico" />
+    <Content Include="Core\SyteLineDevTools.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
