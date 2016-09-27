@@ -23,6 +23,8 @@ Partial Class frmEXTGEN
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
+        Me.txtSite = New System.Windows.Forms.TextBox()
+        Me.lblSite = New System.Windows.Forms.Label()
         Me.chkConnect = New System.Windows.Forms.CheckBox()
         Me.btnConnect = New System.Windows.Forms.Button()
         Me.lblDatabase = New System.Windows.Forms.Label()
@@ -62,6 +64,8 @@ Partial Class frmEXTGEN
         '
         'SplitContainer1.Panel1
         '
+        Me.SplitContainer1.Panel1.Controls.Add(Me.txtSite)
+        Me.SplitContainer1.Panel1.Controls.Add(Me.lblSite)
         Me.SplitContainer1.Panel1.Controls.Add(Me.chkConnect)
         Me.SplitContainer1.Panel1.Controls.Add(Me.btnConnect)
         Me.SplitContainer1.Panel1.Controls.Add(Me.lblDatabase)
@@ -81,6 +85,26 @@ Partial Class frmEXTGEN
         Me.SplitContainer1.SplitterDistance = 225
         Me.SplitContainer1.TabIndex = 0
         '
+        'txtSite
+        '
+        Me.txtSite.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.txtSite.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.FormMetaDataExtractor.UI.My.MySettings.Default, "DBSite", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.txtSite.Location = New System.Drawing.Point(74, 125)
+        Me.txtSite.Name = "txtSite"
+        Me.txtSite.Size = New System.Drawing.Size(148, 20)
+        Me.txtSite.TabIndex = 23
+        Me.txtSite.Text = Global.FormMetaDataExtractor.UI.My.MySettings.Default.DBSite
+        '
+        'lblSite
+        '
+        Me.lblSite.AutoSize = True
+        Me.lblSite.Location = New System.Drawing.Point(38, 129)
+        Me.lblSite.Name = "lblSite"
+        Me.lblSite.Size = New System.Drawing.Size(28, 13)
+        Me.lblSite.TabIndex = 22
+        Me.lblSite.Text = "Site:"
+        '
         'chkConnect
         '
         Me.chkConnect.AutoSize = True
@@ -96,7 +120,7 @@ Partial Class frmEXTGEN
         '
         'btnConnect
         '
-        Me.btnConnect.Location = New System.Drawing.Point(17, 125)
+        Me.btnConnect.Location = New System.Drawing.Point(17, 156)
         Me.btnConnect.Name = "btnConnect"
         Me.btnConnect.Size = New System.Drawing.Size(75, 23)
         Me.btnConnect.TabIndex = 20
@@ -114,6 +138,8 @@ Partial Class frmEXTGEN
         '
         'txtDatabase
         '
+        Me.txtDatabase.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.txtDatabase.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.FormMetaDataExtractor.UI.My.MySettings.Default, "DBAppName", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
         Me.txtDatabase.Location = New System.Drawing.Point(73, 49)
         Me.txtDatabase.Name = "txtDatabase"
@@ -123,10 +149,12 @@ Partial Class frmEXTGEN
         '
         'txtPassword
         '
+        Me.txtPassword.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.txtPassword.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.FormMetaDataExtractor.UI.My.MySettings.Default, "DBPassword", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
         Me.txtPassword.Location = New System.Drawing.Point(74, 99)
         Me.txtPassword.Name = "txtPassword"
-        Me.txtPassword.Size = New System.Drawing.Size(100, 20)
+        Me.txtPassword.Size = New System.Drawing.Size(148, 20)
         Me.txtPassword.TabIndex = 15
         Me.txtPassword.Text = Global.FormMetaDataExtractor.UI.My.MySettings.Default.DBPassword
         Me.txtPassword.UseSystemPasswordChar = True
@@ -151,6 +179,8 @@ Partial Class frmEXTGEN
         '
         'txtServerSpec
         '
+        Me.txtServerSpec.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.txtServerSpec.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.FormMetaDataExtractor.UI.My.MySettings.Default, "DBServer", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
         Me.txtServerSpec.Location = New System.Drawing.Point(73, 24)
         Me.txtServerSpec.Name = "txtServerSpec"
@@ -169,10 +199,12 @@ Partial Class frmEXTGEN
         '
         'txtUser
         '
+        Me.txtUser.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.txtUser.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.FormMetaDataExtractor.UI.My.MySettings.Default, "DBUser", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
         Me.txtUser.Location = New System.Drawing.Point(74, 74)
         Me.txtUser.Name = "txtUser"
-        Me.txtUser.Size = New System.Drawing.Size(100, 20)
+        Me.txtUser.Size = New System.Drawing.Size(148, 20)
         Me.txtUser.TabIndex = 10
         Me.txtUser.Text = Global.FormMetaDataExtractor.UI.My.MySettings.Default.DBUser
         '
@@ -240,6 +272,7 @@ Partial Class frmEXTGEN
         Me.flpInput.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.flpInput.AutoScroll = True
         Me.flpInput.Location = New System.Drawing.Point(4, 23)
         Me.flpInput.Name = "flpInput"
         Me.flpInput.Size = New System.Drawing.Size(132, 441)
@@ -312,4 +345,6 @@ Partial Class frmEXTGEN
     Friend WithEvents chkInput As CheckBox
     Friend WithEvents txtOutput As TextBox
     Friend WithEvents flpInput As FlowLayoutPanel
+    Friend WithEvents txtSite As TextBox
+    Friend WithEvents lblSite As Label
 End Class

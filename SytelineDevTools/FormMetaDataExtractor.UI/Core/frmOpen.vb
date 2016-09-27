@@ -95,6 +95,7 @@ Public Class FormItem
     Public Shared Sub OpenItem(InItem As FormItem)
         Dim oFormType = CType(InItem.Form, Type)
         Dim oForm = oFormType.GetConstructor({}).Invoke({})
+        CType(oForm, Form).ShowIcon = False
         CType(oForm, Form).MdiParent = frmMain
         CType(oForm, Form).Show()
     End Sub

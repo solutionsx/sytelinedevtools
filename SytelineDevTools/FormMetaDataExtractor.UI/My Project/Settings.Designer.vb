@@ -161,6 +161,18 @@ Namespace My
                 Me("DBPassword") = value
             End Set
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+        Public Property DBSite() As String
+            Get
+                Return CType(Me("DBSite"),String)
+            End Get
+            Set
+                Me("DBSite") = value
+            End Set
+        End Property
     End Class
 End Namespace
 
