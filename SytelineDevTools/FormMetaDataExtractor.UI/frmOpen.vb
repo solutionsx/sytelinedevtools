@@ -42,7 +42,7 @@
                     Next
                     If oFormMenuItem IsNot Nothing Then
                         oFormItem.Description = oFormMenuItem.Description
-                        If txtFilter.Text = "" OrElse oFormItem.Description Like txtFilter.Text Then
+                        If txtFilter.Text = "" OrElse oFormItem.Description.ToUpper Like "*" & txtFilter.Text.ToUpper & "*" Then
                             oFormItem.Form = oType
                             lFormItems.Add(oFormItem)
                         End If
