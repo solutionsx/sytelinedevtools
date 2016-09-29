@@ -7,7 +7,7 @@ Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "SyteLineDevTools", "SyteLin
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "SyteLineDevTools.Tests", "SyteLineDevTools.Tests\SyteLineDevTools.Tests.vbproj", "{38F4A9C5-4F44-4F58-9897-BD51D0D873C8}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "SyteLineDevTools.UI", "FormMetaDataExtractor.UI\SyteLineDevTools.UI.vbproj", "{E5835EEC-8A19-429A-B7EA-B5CEEAABF460}"
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "SyteLineDevTools.UI", "SyteLineDevTools.UI\SyteLineDevTools.UI.vbproj", "{E5835EEC-8A19-429A-B7EA-B5CEEAABF460}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
