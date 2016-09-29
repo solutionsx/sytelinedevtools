@@ -12,3 +12,5 @@
 [Rr]elease*/
 obj/
 *.log
+packages*/
+lib*/
