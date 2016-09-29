@@ -27,18 +27,18 @@ Partial Class Form1
         Me.lblPassword = New System.Windows.Forms.Label()
         Me.lblConfig = New System.Windows.Forms.Label()
         Me.lblOutputPath = New System.Windows.Forms.Label()
+        Me.btnVendor = New System.Windows.Forms.Button()
+        Me.btnNonVendor = New System.Windows.Forms.Button()
         Me.txtOutputPath = New System.Windows.Forms.TextBox()
         Me.txtConfig = New System.Windows.Forms.TextBox()
         Me.txtPassword = New System.Windows.Forms.TextBox()
         Me.txtServerSpec = New System.Windows.Forms.TextBox()
         Me.txtUser = New System.Windows.Forms.TextBox()
-        Me.btnVendor = New System.Windows.Forms.Button()
-        Me.btnNonVendor = New System.Windows.Forms.Button()
-        Me.SuspendLayout
+        Me.SuspendLayout()
         '
         'lblUser
         '
-        Me.lblUser.AutoSize = true
+        Me.lblUser.AutoSize = True
         Me.lblUser.Location = New System.Drawing.Point(41, 60)
         Me.lblUser.Name = "lblUser"
         Me.lblUser.Size = New System.Drawing.Size(32, 13)
@@ -47,7 +47,7 @@ Partial Class Form1
         '
         'lblServer
         '
-        Me.lblServer.AutoSize = true
+        Me.lblServer.AutoSize = True
         Me.lblServer.Location = New System.Drawing.Point(32, 10)
         Me.lblServer.Name = "lblServer"
         Me.lblServer.Size = New System.Drawing.Size(41, 13)
@@ -56,7 +56,7 @@ Partial Class Form1
         '
         'lblPassword
         '
-        Me.lblPassword.AutoSize = true
+        Me.lblPassword.AutoSize = True
         Me.lblPassword.Location = New System.Drawing.Point(17, 85)
         Me.lblPassword.Name = "lblPassword"
         Me.lblPassword.Size = New System.Drawing.Size(56, 13)
@@ -65,7 +65,7 @@ Partial Class Form1
         '
         'lblConfig
         '
-        Me.lblConfig.AutoSize = true
+        Me.lblConfig.AutoSize = True
         Me.lblConfig.Location = New System.Drawing.Point(33, 110)
         Me.lblConfig.Name = "lblConfig"
         Me.lblConfig.Size = New System.Drawing.Size(40, 13)
@@ -74,58 +74,12 @@ Partial Class Form1
         '
         'lblOutputPath
         '
-        Me.lblOutputPath.AutoSize = true
+        Me.lblOutputPath.AutoSize = True
         Me.lblOutputPath.Location = New System.Drawing.Point(6, 35)
         Me.lblOutputPath.Name = "lblOutputPath"
         Me.lblOutputPath.Size = New System.Drawing.Size(67, 13)
         Me.lblOutputPath.TabIndex = 9
         Me.lblOutputPath.Text = "Output Path:"
-        '
-        'txtOutputPath
-        '
-        Me.txtOutputPath.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.FormMetaDataExtractor.UI.My.MySettings.Default, "OutputPath", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.txtOutputPath.Location = New System.Drawing.Point(76, 32)
-        Me.txtOutputPath.Name = "txtOutputPath"
-        Me.txtOutputPath.Size = New System.Drawing.Size(364, 20)
-        Me.txtOutputPath.TabIndex = 8
-        Me.txtOutputPath.Text = Global.FormMetaDataExtractor.UI.My.MySettings.Default.OutputPath
-        '
-        'txtConfig
-        '
-        Me.txtConfig.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.FormMetaDataExtractor.UI.My.MySettings.Default, "Config", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.txtConfig.Location = New System.Drawing.Point(77, 107)
-        Me.txtConfig.Name = "txtConfig"
-        Me.txtConfig.Size = New System.Drawing.Size(100, 20)
-        Me.txtConfig.TabIndex = 6
-        Me.txtConfig.Text = Global.FormMetaDataExtractor.UI.My.MySettings.Default.Config
-        '
-        'txtPassword
-        '
-        Me.txtPassword.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.FormMetaDataExtractor.UI.My.MySettings.Default, "Password", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.txtPassword.Location = New System.Drawing.Point(77, 82)
-        Me.txtPassword.Name = "txtPassword"
-        Me.txtPassword.Size = New System.Drawing.Size(100, 20)
-        Me.txtPassword.TabIndex = 5
-        Me.txtPassword.Text = Global.FormMetaDataExtractor.UI.My.MySettings.Default.Password
-        Me.txtPassword.UseSystemPasswordChar = true
-        '
-        'txtServerSpec
-        '
-        Me.txtServerSpec.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.FormMetaDataExtractor.UI.My.MySettings.Default, "Server", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.txtServerSpec.Location = New System.Drawing.Point(76, 7)
-        Me.txtServerSpec.Name = "txtServerSpec"
-        Me.txtServerSpec.Size = New System.Drawing.Size(364, 20)
-        Me.txtServerSpec.TabIndex = 2
-        Me.txtServerSpec.Text = Global.FormMetaDataExtractor.UI.My.MySettings.Default.Server
-        '
-        'txtUser
-        '
-        Me.txtUser.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.FormMetaDataExtractor.UI.My.MySettings.Default, "User", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.txtUser.Location = New System.Drawing.Point(77, 57)
-        Me.txtUser.Name = "txtUser"
-        Me.txtUser.Size = New System.Drawing.Size(100, 20)
-        Me.txtUser.TabIndex = 0
-        Me.txtUser.Text = Global.FormMetaDataExtractor.UI.My.MySettings.Default.User
         '
         'btnVendor
         '
@@ -134,7 +88,7 @@ Partial Class Form1
         Me.btnVendor.Size = New System.Drawing.Size(100, 23)
         Me.btnVendor.TabIndex = 10
         Me.btnVendor.Text = "Extract Vendor"
-        Me.btnVendor.UseVisualStyleBackColor = true
+        Me.btnVendor.UseVisualStyleBackColor = True
         '
         'btnNonVendor
         '
@@ -143,11 +97,57 @@ Partial Class Form1
         Me.btnNonVendor.Size = New System.Drawing.Size(100, 23)
         Me.btnNonVendor.TabIndex = 11
         Me.btnNonVendor.Text = "Extract Site"
-        Me.btnNonVendor.UseVisualStyleBackColor = true
+        Me.btnNonVendor.UseVisualStyleBackColor = True
+        '
+        'txtOutputPath
+        '
+        Me.txtOutputPath.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.FormMetaDataExtractor.UI.My.MySettings.Default, "OutputPath", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.txtOutputPath.Location = New System.Drawing.Point(76, 32)
+        Me.txtOutputPath.Name = "txtOutputPath"
+        Me.txtOutputPath.Size = New System.Drawing.Size(364, 20)
+        Me.txtOutputPath.TabIndex = 8
+        Me.txtOutputPath.Text = Global.FormMetaDataExtractor.UI.My.MySettings.Default.OutputPath
+        '
+        'txtConfig
+        '
+        Me.txtConfig.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.FormMetaDataExtractor.UI.My.MySettings.Default, "Config", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.txtConfig.Location = New System.Drawing.Point(77, 107)
+        Me.txtConfig.Name = "txtConfig"
+        Me.txtConfig.Size = New System.Drawing.Size(100, 20)
+        Me.txtConfig.TabIndex = 6
+        Me.txtConfig.Text = Global.FormMetaDataExtractor.UI.My.MySettings.Default.Config
+        '
+        'txtPassword
+        '
+        Me.txtPassword.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.FormMetaDataExtractor.UI.My.MySettings.Default, "Password", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.txtPassword.Location = New System.Drawing.Point(77, 82)
+        Me.txtPassword.Name = "txtPassword"
+        Me.txtPassword.Size = New System.Drawing.Size(100, 20)
+        Me.txtPassword.TabIndex = 5
+        Me.txtPassword.Text = Global.FormMetaDataExtractor.UI.My.MySettings.Default.Password
+        Me.txtPassword.UseSystemPasswordChar = True
+        '
+        'txtServerSpec
+        '
+        Me.txtServerSpec.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.FormMetaDataExtractor.UI.My.MySettings.Default, "Server", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.txtServerSpec.Location = New System.Drawing.Point(76, 7)
+        Me.txtServerSpec.Name = "txtServerSpec"
+        Me.txtServerSpec.Size = New System.Drawing.Size(364, 20)
+        Me.txtServerSpec.TabIndex = 2
+        Me.txtServerSpec.Text = Global.FormMetaDataExtractor.UI.My.MySettings.Default.Server
+        '
+        'txtUser
+        '
+        Me.txtUser.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.FormMetaDataExtractor.UI.My.MySettings.Default, "User", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.txtUser.Location = New System.Drawing.Point(77, 57)
+        Me.txtUser.Name = "txtUser"
+        Me.txtUser.Size = New System.Drawing.Size(100, 20)
+        Me.txtUser.TabIndex = 0
+        Me.txtUser.Text = Global.FormMetaDataExtractor.UI.My.MySettings.Default.User
         '
         'Form1
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(452, 321)
         Me.Controls.Add(Me.btnNonVendor)
@@ -163,6 +163,7 @@ Partial Class Form1
         Me.Controls.Add(Me.lblUser)
         Me.Controls.Add(Me.txtUser)
         Me.Name = "Form1"
+        Me.ShowIcon = False
         Me.Text = "Form1"
         Me.ResumeLayout(false)
         Me.PerformLayout
