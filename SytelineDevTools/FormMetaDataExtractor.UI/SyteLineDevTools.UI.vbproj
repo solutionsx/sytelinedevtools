@@ -6,9 +6,9 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{E5835EEC-8A19-429A-B7EA-B5CEEAABF460}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <StartupObject>FormMetaDataExtractor.UI.My.MyApplication</StartupObject>
-    <RootNamespace>FormMetaDataExtractor.UI</RootNamespace>
-    <AssemblyName>FormMetaDataExtractor.UI</AssemblyName>
+    <StartupObject>SyteLineDevTools.UI.My.MyApplication</StartupObject>
+    <RootNamespace>SyteLineDevTools.UI</RootNamespace>
+    <AssemblyName>SyteLineDevTools.UI</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>WindowsForms</MyType>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
@@ -36,7 +36,7 @@
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\Debug\</OutputPath>
-    <DocumentationFile>FormMetaDataExtractor.UI.xml</DocumentationFile>
+    <DocumentationFile>SyteLineDevTools.UI.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -46,7 +46,7 @@
     <DefineTrace>true</DefineTrace>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DocumentationFile>FormMetaDataExtractor.UI.xml</DocumentationFile>
+    <DocumentationFile>SyteLineDevTools.UI.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup>
@@ -106,11 +106,11 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.vb">
+    <Compile Include="frmFormMetaDataExtractor.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.vb">
-      <DependentUpon>Form1.vb</DependentUpon>
+    <Compile Include="frmFormMetaDataExtractor.Designer.vb">
+      <DependentUpon>frmFormMetaDataExtractor.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Core\frmMain.Designer.vb">
@@ -149,8 +149,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.vb</DependentUpon>
+    <EmbeddedResource Include="frmFormMetaDataExtractor.resx">
+      <DependentUpon>frmFormMetaDataExtractor.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Core\frmMain.resx">
       <DependentUpon>frmMain.vb</DependentUpon>

@@ -89,12 +89,12 @@ Partial Class frmEXTGEN
         '
         Me.txtSite.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.txtSite.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.FormMetaDataExtractor.UI.My.MySettings.Default, "DBSite", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.txtSite.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.SyteLineDevTools.UI.My.MySettings.Default, "DBSite", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
         Me.txtSite.Location = New System.Drawing.Point(74, 125)
         Me.txtSite.Name = "txtSite"
         Me.txtSite.Size = New System.Drawing.Size(148, 20)
         Me.txtSite.TabIndex = 23
-        Me.txtSite.Text = Global.FormMetaDataExtractor.UI.My.MySettings.Default.DBSite
+        Me.txtSite.Text = Global.SyteLineDevTools.UI.My.MySettings.Default.DBSite
         '
         'lblSite
         '
@@ -140,23 +140,23 @@ Partial Class frmEXTGEN
         '
         Me.txtDatabase.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.txtDatabase.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.FormMetaDataExtractor.UI.My.MySettings.Default, "DBAppName", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.txtDatabase.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.SyteLineDevTools.UI.My.MySettings.Default, "DBAppName", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
         Me.txtDatabase.Location = New System.Drawing.Point(73, 49)
         Me.txtDatabase.Name = "txtDatabase"
         Me.txtDatabase.Size = New System.Drawing.Size(149, 20)
         Me.txtDatabase.TabIndex = 18
-        Me.txtDatabase.Text = Global.FormMetaDataExtractor.UI.My.MySettings.Default.DBAppName
+        Me.txtDatabase.Text = Global.SyteLineDevTools.UI.My.MySettings.Default.DBAppName
         '
         'txtPassword
         '
         Me.txtPassword.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.txtPassword.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.FormMetaDataExtractor.UI.My.MySettings.Default, "DBPassword", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.txtPassword.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.SyteLineDevTools.UI.My.MySettings.Default, "DBPassword", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
         Me.txtPassword.Location = New System.Drawing.Point(74, 99)
         Me.txtPassword.Name = "txtPassword"
         Me.txtPassword.Size = New System.Drawing.Size(148, 20)
         Me.txtPassword.TabIndex = 15
-        Me.txtPassword.Text = Global.FormMetaDataExtractor.UI.My.MySettings.Default.DBPassword
+        Me.txtPassword.Text = Global.SyteLineDevTools.UI.My.MySettings.Default.DBPassword
         Me.txtPassword.UseSystemPasswordChar = True
         '
         'lblPassword
@@ -181,12 +181,12 @@ Partial Class frmEXTGEN
         '
         Me.txtServerSpec.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.txtServerSpec.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.FormMetaDataExtractor.UI.My.MySettings.Default, "DBServer", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.txtServerSpec.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.SyteLineDevTools.UI.My.MySettings.Default, "DBServer", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
         Me.txtServerSpec.Location = New System.Drawing.Point(73, 24)
         Me.txtServerSpec.Name = "txtServerSpec"
         Me.txtServerSpec.Size = New System.Drawing.Size(149, 20)
         Me.txtServerSpec.TabIndex = 12
-        Me.txtServerSpec.Text = Global.FormMetaDataExtractor.UI.My.MySettings.Default.DBServer
+        Me.txtServerSpec.Text = Global.SyteLineDevTools.UI.My.MySettings.Default.DBServer
         '
         'lblUser
         '
@@ -201,12 +201,12 @@ Partial Class frmEXTGEN
         '
         Me.txtUser.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.txtUser.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.FormMetaDataExtractor.UI.My.MySettings.Default, "DBUser", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.txtUser.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.SyteLineDevTools.UI.My.MySettings.Default, "DBUser", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
         Me.txtUser.Location = New System.Drawing.Point(74, 74)
         Me.txtUser.Name = "txtUser"
         Me.txtUser.Size = New System.Drawing.Size(148, 20)
         Me.txtUser.TabIndex = 10
-        Me.txtUser.Text = Global.FormMetaDataExtractor.UI.My.MySettings.Default.DBUser
+        Me.txtUser.Text = Global.SyteLineDevTools.UI.My.MySettings.Default.DBUser
         '
         'SplitContainer2
         '

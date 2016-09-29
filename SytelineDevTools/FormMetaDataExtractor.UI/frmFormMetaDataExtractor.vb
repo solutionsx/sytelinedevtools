@@ -1,10 +1,10 @@
-﻿Imports FormMetaDataExtractor.UI
+﻿Imports SyteLineDevTools.UI
 Imports Mongoose.IDO
 Imports Mongoose.WinStudio
 Imports Mongoose.WinStudio.Enums
 Imports SyteLineDevTools
 <FormMenuItem(Description:="Form Scripting")>
-Public Class Form1
+Public Class frmSyteLineDevTools
     Private Function GetClient() As Client
         Dim oclient As New Client(txtServerSpec.Text, IDOProtocol.Http)
         oclient.OpenSession(txtUser.Text, txtPassword.Text, txtConfig.Text)

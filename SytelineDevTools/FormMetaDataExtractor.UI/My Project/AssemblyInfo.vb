@@ -8,10 +8,10 @@ Imports System.Runtime.InteropServices
 
 ' Review the values of the assembly attributes
 
-<Assembly: AssemblyTitle("FormMetaDataExtractor.UI")>
+<Assembly: AssemblyTitle("SyteLineDevTools.UI")>
 <Assembly: AssemblyDescription("")>
 <Assembly: AssemblyCompany("")>
-<Assembly: AssemblyProduct("FormMetaDataExtractor.UI")>
+<Assembly: AssemblyProduct("SyteLineDevTools.UI")>
 <Assembly: AssemblyCopyright("Copyright ©  2016")>
 <Assembly: AssemblyTrademark("")>
 

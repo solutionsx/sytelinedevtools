@@ -73,7 +73,7 @@ Public Class FormItem
                 Try
                     Dim oFormMenuItem As FormMenuItem = Nothing
                     For Each oAttr As Attribute In oType.GetCustomAttributes(True)
-                        If oAttr.ToString = "FormMetaDataExtractor.UI.FormMenuItem" Then
+                        If oAttr.ToString = "SyteLineDevTools.UI.FormMenuItem" Then
                             oFormMenuItem = CType(oAttr, FormMenuItem)
                             Exit For
                         End If

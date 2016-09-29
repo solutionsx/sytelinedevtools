@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class Form1
+Partial Class frmSyteLineDevTools
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -101,49 +101,49 @@ Partial Class Form1
         '
         'txtOutputPath
         '
-        Me.txtOutputPath.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.FormMetaDataExtractor.UI.My.MySettings.Default, "OutputPath", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.txtOutputPath.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.SyteLineDevTools.UI.My.MySettings.Default, "OutputPath", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
         Me.txtOutputPath.Location = New System.Drawing.Point(76, 32)
         Me.txtOutputPath.Name = "txtOutputPath"
         Me.txtOutputPath.Size = New System.Drawing.Size(364, 20)
         Me.txtOutputPath.TabIndex = 8
-        Me.txtOutputPath.Text = Global.FormMetaDataExtractor.UI.My.MySettings.Default.OutputPath
+        Me.txtOutputPath.Text = Global.SyteLineDevTools.UI.My.MySettings.Default.OutputPath
         '
         'txtConfig
         '
-        Me.txtConfig.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.FormMetaDataExtractor.UI.My.MySettings.Default, "Config", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.txtConfig.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.SyteLineDevTools.UI.My.MySettings.Default, "Config", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
         Me.txtConfig.Location = New System.Drawing.Point(77, 107)
         Me.txtConfig.Name = "txtConfig"
         Me.txtConfig.Size = New System.Drawing.Size(100, 20)
         Me.txtConfig.TabIndex = 6
-        Me.txtConfig.Text = Global.FormMetaDataExtractor.UI.My.MySettings.Default.Config
+        Me.txtConfig.Text = Global.SyteLineDevTools.UI.My.MySettings.Default.Config
         '
         'txtPassword
         '
-        Me.txtPassword.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.FormMetaDataExtractor.UI.My.MySettings.Default, "Password", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.txtPassword.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.SyteLineDevTools.UI.My.MySettings.Default, "Password", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
         Me.txtPassword.Location = New System.Drawing.Point(77, 82)
         Me.txtPassword.Name = "txtPassword"
         Me.txtPassword.Size = New System.Drawing.Size(100, 20)
         Me.txtPassword.TabIndex = 5
-        Me.txtPassword.Text = Global.FormMetaDataExtractor.UI.My.MySettings.Default.Password
+        Me.txtPassword.Text = Global.SyteLineDevTools.UI.My.MySettings.Default.Password
         Me.txtPassword.UseSystemPasswordChar = True
         '
         'txtServerSpec
         '
-        Me.txtServerSpec.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.FormMetaDataExtractor.UI.My.MySettings.Default, "Server", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.txtServerSpec.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.SyteLineDevTools.UI.My.MySettings.Default, "Server", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
         Me.txtServerSpec.Location = New System.Drawing.Point(76, 7)
         Me.txtServerSpec.Name = "txtServerSpec"
         Me.txtServerSpec.Size = New System.Drawing.Size(364, 20)
         Me.txtServerSpec.TabIndex = 2
-        Me.txtServerSpec.Text = Global.FormMetaDataExtractor.UI.My.MySettings.Default.Server
+        Me.txtServerSpec.Text = Global.SyteLineDevTools.UI.My.MySettings.Default.Server
         '
         'txtUser
         '
-        Me.txtUser.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.FormMetaDataExtractor.UI.My.MySettings.Default, "User", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.txtUser.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.SyteLineDevTools.UI.My.MySettings.Default, "User", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
         Me.txtUser.Location = New System.Drawing.Point(77, 57)
         Me.txtUser.Name = "txtUser"
         Me.txtUser.Size = New System.Drawing.Size(100, 20)
         Me.txtUser.TabIndex = 0
-        Me.txtUser.Text = Global.FormMetaDataExtractor.UI.My.MySettings.Default.User
+        Me.txtUser.Text = Global.SyteLineDevTools.UI.My.MySettings.Default.User
         '
         'Form1
         '
