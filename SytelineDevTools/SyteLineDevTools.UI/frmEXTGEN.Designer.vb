@@ -22,6 +22,7 @@ Partial Class frmEXTGEN
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
         Me.txtSite = New System.Windows.Forms.TextBox()
         Me.lblSite = New System.Windows.Forms.Label()
@@ -42,6 +43,9 @@ Partial Class frmEXTGEN
         Me.flpInput = New System.Windows.Forms.FlowLayoutPanel()
         Me.chkInput = New System.Windows.Forms.CheckBox()
         Me.txtOutput = New System.Windows.Forms.TextBox()
+        Me.SPFilterMenuStrip = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.FilterToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ClearFilterToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainer1.Panel1.SuspendLayout()
         Me.SplitContainer1.Panel2.SuspendLayout()
@@ -54,6 +58,7 @@ Partial Class frmEXTGEN
         Me.SplitContainer3.Panel1.SuspendLayout()
         Me.SplitContainer3.Panel2.SuspendLayout()
         Me.SplitContainer3.SuspendLayout()
+        Me.SPFilterMenuStrip.SuspendLayout()
         Me.SuspendLayout()
         '
         'SplitContainer1
@@ -93,7 +98,7 @@ Partial Class frmEXTGEN
         Me.txtSite.Location = New System.Drawing.Point(74, 125)
         Me.txtSite.Name = "txtSite"
         Me.txtSite.Size = New System.Drawing.Size(148, 20)
-        Me.txtSite.TabIndex = 23
+        Me.txtSite.TabIndex = 4
         Me.txtSite.Text = Global.SyteLineDevTools.UI.My.MySettings.Default.DBSite
         '
         'lblSite
@@ -114,7 +119,7 @@ Partial Class frmEXTGEN
         Me.chkConnect.Location = New System.Drawing.Point(0, 0)
         Me.chkConnect.Name = "chkConnect"
         Me.chkConnect.Size = New System.Drawing.Size(225, 17)
-        Me.chkConnect.TabIndex = 21
+        Me.chkConnect.TabIndex = 9
         Me.chkConnect.Text = "Expand"
         Me.chkConnect.UseVisualStyleBackColor = True
         '
@@ -123,7 +128,7 @@ Partial Class frmEXTGEN
         Me.btnConnect.Location = New System.Drawing.Point(17, 156)
         Me.btnConnect.Name = "btnConnect"
         Me.btnConnect.Size = New System.Drawing.Size(75, 23)
-        Me.btnConnect.TabIndex = 20
+        Me.btnConnect.TabIndex = 5
         Me.btnConnect.Text = "Connect"
         Me.btnConnect.UseVisualStyleBackColor = True
         '
@@ -144,7 +149,7 @@ Partial Class frmEXTGEN
         Me.txtDatabase.Location = New System.Drawing.Point(73, 49)
         Me.txtDatabase.Name = "txtDatabase"
         Me.txtDatabase.Size = New System.Drawing.Size(149, 20)
-        Me.txtDatabase.TabIndex = 18
+        Me.txtDatabase.TabIndex = 1
         Me.txtDatabase.Text = Global.SyteLineDevTools.UI.My.MySettings.Default.DBAppName
         '
         'txtPassword
@@ -155,7 +160,7 @@ Partial Class frmEXTGEN
         Me.txtPassword.Location = New System.Drawing.Point(74, 99)
         Me.txtPassword.Name = "txtPassword"
         Me.txtPassword.Size = New System.Drawing.Size(148, 20)
-        Me.txtPassword.TabIndex = 15
+        Me.txtPassword.TabIndex = 3
         Me.txtPassword.Text = Global.SyteLineDevTools.UI.My.MySettings.Default.DBPassword
         Me.txtPassword.UseSystemPasswordChar = True
         '
@@ -185,7 +190,7 @@ Partial Class frmEXTGEN
         Me.txtServerSpec.Location = New System.Drawing.Point(73, 24)
         Me.txtServerSpec.Name = "txtServerSpec"
         Me.txtServerSpec.Size = New System.Drawing.Size(149, 20)
-        Me.txtServerSpec.TabIndex = 12
+        Me.txtServerSpec.TabIndex = 0
         Me.txtServerSpec.Text = Global.SyteLineDevTools.UI.My.MySettings.Default.DBServer
         '
         'lblUser
@@ -205,7 +210,7 @@ Partial Class frmEXTGEN
         Me.txtUser.Location = New System.Drawing.Point(74, 74)
         Me.txtUser.Name = "txtUser"
         Me.txtUser.Size = New System.Drawing.Size(148, 20)
-        Me.txtUser.TabIndex = 10
+        Me.txtUser.TabIndex = 2
         Me.txtUser.Text = Global.SyteLineDevTools.UI.My.MySettings.Default.DBUser
         '
         'SplitContainer2
@@ -234,7 +239,7 @@ Partial Class frmEXTGEN
         Me.chkList.Location = New System.Drawing.Point(0, 0)
         Me.chkList.Name = "chkList"
         Me.chkList.Size = New System.Drawing.Size(205, 17)
-        Me.chkList.TabIndex = 1
+        Me.chkList.TabIndex = 10
         Me.chkList.Text = "Expand"
         Me.chkList.UseVisualStyleBackColor = True
         '
@@ -246,7 +251,7 @@ Partial Class frmEXTGEN
         Me.trSPs.Location = New System.Drawing.Point(0, 23)
         Me.trSPs.Name = "trSPs"
         Me.trSPs.Size = New System.Drawing.Size(205, 441)
-        Me.trSPs.TabIndex = 0
+        Me.trSPs.TabIndex = 6
         '
         'SplitContainer3
         '
@@ -276,7 +281,7 @@ Partial Class frmEXTGEN
         Me.flpInput.Location = New System.Drawing.Point(4, 23)
         Me.flpInput.Name = "flpInput"
         Me.flpInput.Size = New System.Drawing.Size(132, 441)
-        Me.flpInput.TabIndex = 1
+        Me.flpInput.TabIndex = 7
         '
         'chkInput
         '
@@ -285,7 +290,7 @@ Partial Class frmEXTGEN
         Me.chkInput.Location = New System.Drawing.Point(0, 0)
         Me.chkInput.Name = "chkInput"
         Me.chkInput.Size = New System.Drawing.Size(136, 17)
-        Me.chkInput.TabIndex = 0
+        Me.chkInput.TabIndex = 11
         Me.chkInput.Text = "Expand"
         Me.chkInput.UseVisualStyleBackColor = True
         '
@@ -297,7 +302,25 @@ Partial Class frmEXTGEN
         Me.txtOutput.Name = "txtOutput"
         Me.txtOutput.ScrollBars = System.Windows.Forms.ScrollBars.Both
         Me.txtOutput.Size = New System.Drawing.Size(268, 464)
-        Me.txtOutput.TabIndex = 2
+        Me.txtOutput.TabIndex = 8
+        '
+        'SPFilterMenuStrip
+        '
+        Me.SPFilterMenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FilterToolStripMenuItem, Me.ClearFilterToolStripMenuItem})
+        Me.SPFilterMenuStrip.Name = "SPFilterMenuStrip"
+        Me.SPFilterMenuStrip.Size = New System.Drawing.Size(131, 48)
+        '
+        'FilterToolStripMenuItem
+        '
+        Me.FilterToolStripMenuItem.Name = "FilterToolStripMenuItem"
+        Me.FilterToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.FilterToolStripMenuItem.Text = "Filter"
+        '
+        'ClearFilterToolStripMenuItem
+        '
+        Me.ClearFilterToolStripMenuItem.Name = "ClearFilterToolStripMenuItem"
+        Me.ClearFilterToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.ClearFilterToolStripMenuItem.Text = "Clear Filter"
         '
         'frmEXTGEN
         '
@@ -306,7 +329,7 @@ Partial Class frmEXTGEN
         Me.ClientSize = New System.Drawing.Size(846, 464)
         Me.Controls.Add(Me.SplitContainer1)
         Me.Name = "frmEXTGEN"
-        Me.Text = "frmEXTGEN"
+        Me.Text = """EXTGEN/Wrapper Scripting"
         Me.SplitContainer1.Panel1.ResumeLayout(False)
         Me.SplitContainer1.Panel1.PerformLayout()
         Me.SplitContainer1.Panel2.ResumeLayout(False)
@@ -323,6 +346,7 @@ Partial Class frmEXTGEN
         Me.SplitContainer3.Panel2.PerformLayout()
         CType(Me.SplitContainer3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SplitContainer3.ResumeLayout(False)
+        Me.SPFilterMenuStrip.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -347,4 +371,7 @@ Partial Class frmEXTGEN
     Friend WithEvents flpInput As FlowLayoutPanel
     Friend WithEvents txtSite As TextBox
     Friend WithEvents lblSite As Label
+    Friend WithEvents SPFilterMenuStrip As ContextMenuStrip
+    Friend WithEvents FilterToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ClearFilterToolStripMenuItem As ToolStripMenuItem
 End Class

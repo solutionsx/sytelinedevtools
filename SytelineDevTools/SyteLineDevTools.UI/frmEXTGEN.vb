@@ -2,9 +2,10 @@
 Imports System.Text
 Imports SyteLineDevTools
 
-<FormMenuItem(Description:="EXTGEN Scripting")>
+<FormMenuItem(Description:="EXTGEN/Wrapper Scripting")>
 Public Class frmEXTGEN
     Dim _StoredProcedures As New List(Of String)
+    Dim _SPFilter As String
     Dim _Builder As ExtGenBuilder
     Private Sub btnConnect_Click(sender As Object, e As EventArgs) Handles btnConnect.Click
         'Validation Connection
@@ -14,15 +15,28 @@ Public Class frmEXTGEN
         _Builder = New ExtGenBuilder(db)
 
         flpInput.Controls.Clear()
-        trSPs.Nodes.Clear()
-        Dim oRoot = trSPs.Nodes.Add("Stored Procedures")
         _StoredProcedures = _Builder.GetStoredProcedures()
-        For Each strName In _StoredProcedures
-            oRoot.Nodes.Add(strName)
-        Next
+        RefreshSPList
         chkList.Checked = True
     End Sub
-
+    Private Sub RefreshSPList()
+        trSPs.Nodes.Clear()
+        Dim oRoot = trSPs.Nodes.Add("Stored Procedures")
+        Dim collSPs As New List(Of String)
+        If _SPFilter = "" Then
+            collSPs = _StoredProcedures
+        Else
+            'collSPs = (From sp In _StoredProcedures Where sp.ToUpper Like "*" & _SPFilter.ToUpper & "*")
+            For Each sp In _StoredProcedures
+                If sp.ToUpper Like "*" & _SPFilter.ToUpper & "*" Then
+                    collSPs.Add(sp)
+                End If
+            Next
+        End If
+        For Each strName In collSPs
+            oRoot.Nodes.Add(strName)
+        Next
+    End Sub
     Private Sub chkConnect_CheckedChanged(sender As Object, e As EventArgs) Handles chkConnect.CheckedChanged
         SplitContainer1.SplitterDistance = If(chkConnect.Checked, 225, 15)
         If chkConnect.Checked Then
@@ -57,7 +71,12 @@ Public Class frmEXTGEN
         If e.Node.Parent Is Nothing Then
             Exit Sub
         End If
-
+        Dim CheckBoxEXTGEN As New CheckBox
+        CheckBoxEXTGEN.Size = New Size(100, 25)
+        CheckBoxEXTGEN.Text = "Make EXTGEN"
+        CheckBoxEXTGEN.Checked = True
+        flpInput.SetFlowBreak(CheckBoxEXTGEN, True)
+        flpInput.Controls.Add(CheckBoxEXTGEN)
         Dim lParameters As List(Of SPParameter) = _Builder.GetStoredProcedureParms(e.Node.Text)
         For Each oParameter As SPParameter In lParameters
             Debug.Print(oParameter.PARAMETER_NAME)
@@ -76,6 +95,7 @@ Public Class frmEXTGEN
             AddHandler CheckBox1.CheckedChanged, AddressOf NullableCheckBox_Changed
             flpInput.Controls.Add(Label1)
             flpInput.Controls.Add(TextBox1)
+            flpInput.SetFlowBreak(CheckBox1, True)
             flpInput.Controls.Add(CheckBox1)
         Next
 
@@ -96,8 +116,8 @@ Public Class frmEXTGEN
         Dim sName = CType(sender, Button).Text.Substring(9)
         Dim lSPParameters = CType(CType(sender, Button).Tag, List(Of SPParameter))
         Dim lExecuteParms As New List(Of Object)
-
-        For i = 2 To flpInput.Controls.Count - 1 Step 3
+        Dim CheckBoxEXTGEN = CType(flpInput.Controls(0), CheckBox)
+        For i = 3 To flpInput.Controls.Count - 1 Step 3
             If flpInput.Controls(i - 2).GetType Is GetType(Label) Then
                 Dim Label1 = CType(flpInput.Controls(i - 2), Label)
                 Dim TextBox1 = CType(flpInput.Controls(i - 1), TextBox)
@@ -109,7 +129,7 @@ Public Class frmEXTGEN
                 End If
             End If
         Next
-        txtOutput.Text = _Builder.BuildExtGen(txtSite.Text, sName, lSPParameters, lExecuteParms)
+        txtOutput.Text = _Builder.BuildExtGen(txtSite.Text, sName, CheckBoxEXTGEN.Checked, lSPParameters, lExecuteParms)
 
     End Sub
 
@@ -120,4 +140,19 @@ Public Class frmEXTGEN
         End If
     End Sub
 
+    Private Sub trSPs_NodeMouseClick(sender As Object, e As TreeNodeMouseClickEventArgs) Handles trSPs.NodeMouseClick
+        If e.Button = MouseButtons.Right Then
+            SPFilterMenuStrip.Show(PointToScreen(e.Location))
+        End If
+    End Sub
+
+    Private Sub FilterToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FilterToolStripMenuItem.Click
+        _SPFilter = InputBox("Filter", "Stored Procedures Filtering")
+        RefreshSPList()
+    End Sub
+
+    Private Sub ClearFilterToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ClearFilterToolStripMenuItem.Click
+        _SPFilter = ""
+        RefreshSPList()
+    End Sub
 End Class
