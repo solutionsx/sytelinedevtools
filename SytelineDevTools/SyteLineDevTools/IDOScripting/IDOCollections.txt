@@ -1,0 +1,36 @@
+﻿{
+  "CollectionName": "IDOCollections",
+  "Action": 2,
+  "CustomDelete": "IdoCollectionDeleteSp(CollectionName,1,0),IdoCollectionDeleteSp(CollectionName,0,0),REF",
+  "CustomInsert": "",
+  "CustomUpdate": "",
+  "DeleteInvoke": {},
+  "InsertInvoke": {
+    "IDOName": "IdoCollections",
+    "Method": "IdoCollectionCreateSp",
+    "Parameters": [
+      "P(CollectionName)",
+      "P(ServerName)",
+      "P(CollectionDesc)",
+      "P(LockBy)",
+      "P(Extends)",
+      "P(ReplaceFlag)",
+      "P(LabelStringID)",
+      "",
+      ""
+    ]
+  },
+  "KeyProperties": [
+    "CollectionName",
+    "DevelopmentFlag",
+    "ServerName"
+  ],
+  "Items": {
+    "Item": {
+      "CollectionName": "SLDevToolsForms",
+      "DevelopmentFlag": "0",
+      "ServerName": "SLDevTools",
+      "ReplaceFlag": "0"
+    }
+  }
+}
