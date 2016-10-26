@@ -18,4 +18,12 @@ Public Module ObjectPersister
         End If
     End Sub
 
+    Public Function GetObjectScript(baserepopath As String, objecttype As GlobalObjectType,objectname As String) As string
+         Dim objectdir = Path.Combine(baserepopath,[Enum].GetName(GetType(GlobalObjectType),objecttype))
+         Dim xmlfilename = Path.Combine(objectdir,Path.ChangeExtension(objectname,"xml")).Replace("/","-")
+         If File.Exists(xmlfilename) Then
+            Return File.ReadAllText(xmlfilename)
+         End If
+        Return ""
+    End Function
 End Module

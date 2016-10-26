@@ -9,13 +9,13 @@ Imports Mongoose.WinStudio.Enums
 Public Class FormExtractorTests
 
     Private Function GetClient As Client
-        Dim oclient As New Client("http://192.168.1.16/IDORequestService/RequestService.aspx", IDOProtocol.Http)
+        Dim oclient As New Client("http://172.16.89.163/IDORequestService/RequestService.aspx", IDOProtocol.Http)
         oclient.OpenSession("sa", "", "Demo")
         Return oclient
     End Function
 
     <Test>
-    Public Sub GetFormList_WithVendorScope_ReturnsListOfVendorForms()
+    Public Sub GetFormList_WithSiteScope_ReturnsListOfSiteForms()
         Dim oclient = GetClient
         Try
             Dim extractor As New FormExtractor(oclient)

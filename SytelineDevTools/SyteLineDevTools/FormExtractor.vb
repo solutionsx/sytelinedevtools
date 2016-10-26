@@ -11,23 +11,10 @@ Public Class FormExtractor
     End Sub
 
     Public Function GetFormList(scope as Enums.ScopeTypes,groupname As String,username As string) As List(Of String)
-        Dim scoperequest As New LoadCollectionRequestData
-        scoperequest.IDOName = "SXForms"
-        scoperequest.PropertyList.Add("Name")
-        scoperequest.Filter = String.Format("ScopeType={0}",CInt(scope))
-        
-        Dim scoperesponse =_client.LoadCollection(scoperequest)
+
+        Dim scoperesponse =_client.LoadCollection("SLDevToolsForms","Name",String.Format("ScopeType={0}",CInt(scope)),"",0)
         Return scoperesponse.Items.Select(Of String)(Function(e) e.PropertyValues(0).Value).ToList 
          
-        'Dim request As New LoadGlobalObjectsRequestData 
-        'request.GetNameListOnly = True
-        'request.ScopeInfo = New ScopeInfo(scope,groupName,username)
-        'request.ObjectType = Enums.GlobalObjectType.Form 
-        'request.StringTableName = "Strings"
-       
-        'Dim response = _client.FormsMetadata.LoadGlobalObjects(request)
-        
-        'return response.NameList 
     End Function
 
     Public Function GetFormByScope(formname As String,scope as Enums.ScopeTypes,groupname As String,username As string) As FormDef  
@@ -46,7 +33,10 @@ Public Class FormExtractor
         Dim formlist As New List(Of FormDef)
         Dim request As New IDORequestEnvelope
 
-        formnames = formnames.Take(100).ToList 
+        #If DEBUG
+            formnames = formnames.Take(200).ToList 
+        #End If
+        
 
         For each frmname In formnames
             request.Requests.Add(RequestType.LoadForm, GetLoadFormRequest(frmname, scope, groupname, username))
@@ -80,4 +70,16 @@ Public Class FormExtractor
         lfrd.ScopeInfo = New ScopeInfo(scope,groupname,username)
         Return lfrd
     End Function
+
+    Public Sub UploadFormToSyteline(formxml As string)
+        Dim sfrd As New SaveFormRequestData 
+        sfrd.TheForm = FormDef.FromXml(formxml)
+        sfrd.ScopeInfo =New ScopeInfo(Enums.ScopeTypes.SITE_DEFAULT,"","")
+        Dim request As New IDORequestEnvelope
+        request.Requests.Add(RequestType.SaveForm,sfrd)
+        Dim response = _client.GetResponse(request)
+
+        
+    End Sub
+
 End Class
