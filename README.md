@@ -4,18 +4,16 @@ Developer tools for SyteLine development
 EXTGEN Utilities are using the following Guidelines for creating EXTGENS.
 
 EXTGEN Guidelines
-Generally, EXTGEN Sp's are used when the internal functionality of an SP is being changed. For example, changing a internal calculation within the Sp or changing a data operation (i.e. adding UETs to a copy operation).  If the input parameters or the output data schema from the SP is changing then DO NOT use an EXTGEN.  Most of the time when editing an SP for a report an EXTGEN WILL NOT be used.  Standard report changes should be done with a new prefixed version of the original SP.
-
-In an attempt to not copy code from the original SP and promote more upgrade-able code, it is better to do either post or pre-processing after the initial SP is run. This will allow you to call the existing code and just add your particular changes. This isn't always possible but should be used by default. If it isn't possible in your case then it must be documented as a risk for higher risk for upgrade.
+Generally, EXTGEN Sp's are used when the internal functionality of an SP is being changed. For example, changing a internal calculation within the Sp or changing a data operation (i.e. adding UETs to a copy operation).  If the input parameters or the output data schema from the SP is changing then DO NOT use an EXTGEN.  Most of the time when editing an SP for a report an EXTGEN WILL NOT be used.  Standard report changes should be done with a new prefixed version of the original SP. In an attempt to not copy code from the original SP and promote more upgrade-able code, it is better to do either post or pre-processing after the initial SP is run. This will allow you to call the existing code and just add your particular changes. This isn't always possible but should be used by default. If it isn't possible in your case then it must be documented as a risk for higher risk for upgrade.
 
 Post Processing Sample - This updates a custom table after a transfer order DC transaction is processed
 
-SET ANSI_NULLS ON
 
+```
+SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-
 ALTER PROCEDURE [dbo].[EXTGEN_TransferOrderShipSp](
   @TrnNum               TrnNumType
 , @TransferFromSite     SiteType
@@ -93,9 +91,11 @@ END
 
 RETURN @Severity
  
- 
+```
+
 Pre-Process Sample - Syteline had a job copy routine that when used from the job copy screen has option to copy UETs, however when used in BOM creation from Job screen it didn't allow you to choose, so this always turns it on.
- 
+
+``` 
 CREATE PROCEDURE [dbo].[EXTGEN_JobCopy1Sp] (
   @FromType NVARCHAR(8)
 , @FromJob JobType
@@ -164,3 +164,4 @@ EXEC @Severity = JobCopy1Sp
 
 RETURN @Severity 
 GO
+```
